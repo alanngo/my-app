@@ -3,14 +3,23 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { TodoComponent } from './todo/todo.component';
+import { FormsModule } from '@angular/forms';
+import { RootComponent } from './root/root.component';
+import { CommandsComponent } from './commands/commands.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TodoComponent,
+    RootComponent,
+    CommandsComponent,
   ],
-  imports: [
+  imports: 
+  [
     BrowserModule,
-    AppRoutingModule
+    FormsModule,
+    AppRoutingModule  
   ],
   providers: [],
   bootstrap: [AppComponent]

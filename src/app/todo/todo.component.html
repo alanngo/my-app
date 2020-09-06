@@ -1,0 +1,10 @@
+<div class="container text-center">
+    <input class="" type="text" [(ngModel)]="newItem">
+    <button class="btn btn-success" (click)="add()">+</button>
+</div>   
+    <div class="row" *ngFor="let item of todo">
+        <div class="col-6">
+            <h5>{{item}}  <button class="btn-danger btn" (click)="remove(item)" >X</button></h5>
+        </div>
+    </div>
+
