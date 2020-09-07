@@ -1,10 +1,19 @@
-<div class="container text-center">
-    <input class="" type="text" [(ngModel)]="newItem">
-    <button class="btn btn-success" (click)="add()">+</button>
-</div>   
-    <div class="row" *ngFor="let item of todo">
-        <div class="col-6">
+<div class="container">
+    <div class="row">
+        <div class="form-group col-4 offset-4">
+            <input class="form-control" type="text" [(ngModel)]="newItem">
+            
+        </div>
+        <div>
+            <button class="btn btn-success" (click)="add()">+</button>
+        </div>
+        
+    </div>
+    <div>
+        <div *ngFor="let item of todo">
             <h5>{{item}}  <button class="btn-danger btn" (click)="remove(item)" >X</button></h5>
         </div>
     </div>
+</div>   
+    
 
