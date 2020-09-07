@@ -1,0 +1,27 @@
+
+<div class="container">
+    <div class="row">
+        <div class="col-4 offset-4">
+            <div class="card">
+                <div class="card-header text-center bg-dark text-light"><h1>Micro Center</h1></div>
+                <div class="card-body border-primary">
+                    <form action="">
+                        <div class="form-group">
+                            <label for="">Username</label>
+                            <input [(ngModel)]="user.username" class="form-control" type="text" name="username">
+                        </div>
+                        <div class="form-group">
+                            <label for="">Password</label>
+                            <input [(ngModel)]="user.password" class="form-control" type="password" name="username">
+                        </div>
+                        <button class="btn-primary btn" (click)="login()">Login</button> &nbsp;
+                        <button class="btn-success btn" (click)="signup()">Sign Up</button> &nbsp;
+                        <button class="btn-danger btn" (click)="deleteUser()">Delete User</button>
+                        <div *ngIf="invalidLogin" class="alert-danger alert" role="alert">Invalid username/password</div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

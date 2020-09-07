@@ -7,6 +7,9 @@ import { TodoComponent } from './todo/todo.component';
 import { FormsModule } from '@angular/forms';
 import { RootComponent } from './root/root.component';
 import { CommandsComponent } from './commands/commands.component';
+import { RoutingComponent } from './routing/routing.component';
+import { LoginComponent } from './login/login.component';
+import { LaptopComponent } from './laptop/laptop.component';
 
 @NgModule({
   declarations: [
@@ -14,6 +17,9 @@ import { CommandsComponent } from './commands/commands.component';
     TodoComponent,
     RootComponent,
     CommandsComponent,
+    RoutingComponent,
+    LoginComponent,
+    LaptopComponent,
   ],
   imports: 
   [
