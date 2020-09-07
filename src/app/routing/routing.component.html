@@ -1,0 +1,23 @@
+<h1>Angular Routing</h1>
+
+<h6>"app-routing.module.ts"</h6>
+<pre>
+    <code>
+        "const routes: Routes = 
+        [
+            // renders 'RootComponent' when 'root' is entered in URL
+            {{openCurly}} path:'root', component: RootComponent {{closeCurly}} 
+            ...
+
+            {{openCurly}} path: '', redirectTo: '/root', pathMatch: 'full' {{closeCurly}}, //default route
+            {{openCurly}}path: '**', redirectTo: '/root', pathMatch: 'full' {{closeCurly}} //catch all route 
+        ];"
+    </code>
+  </pre>
+
+  <h6>"app.component.html"</h6>
+<pre>
+    <code>
+        {{openAngle}}router-outlet{{closeAngle}} {{openAngle}}/router-outlet{{closeAngle}}
+    </code>
+  </pre>
