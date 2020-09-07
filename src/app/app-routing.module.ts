@@ -6,6 +6,8 @@ import { CommandsComponent } from './commands/commands.component';
 import { RoutingComponent } from './routing/routing.component';
 import { LoginComponent } from './login/login.component';
 import { LaptopComponent } from './laptop/laptop.component';
+import { AuthGuard } from './auth.guard';
+import { DeadEndComponent } from './dead-end/dead-end.component';
 
 const routes: Routes = 
 [
@@ -14,10 +16,11 @@ const routes: Routes =
     {path:'commands', component: CommandsComponent},
     {path:'routing', component: RoutingComponent},
     {path:'login', component: LoginComponent},
-    {path:'laptop', component: LaptopComponent},
+    {path:'deadEnd', component: DeadEndComponent},
+    {path:'laptop', component: LaptopComponent, canActivate: [AuthGuard]},
 
     { path: '', redirectTo: '/root', pathMatch: 'full' }, //default route
-    { path: '**', redirectTo: '/root', pathMatch: 'full' } //catch all route
+    { path: '**', redirectTo: '/deadEnd', pathMatch: 'full' } //catch all route
 ];
 
 @NgModule({

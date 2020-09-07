@@ -11,6 +11,9 @@ import { RoutingComponent } from './routing/routing.component';
 import { LoginComponent } from './login/login.component';
 import { LaptopComponent } from './laptop/laptop.component';
 
+import {AuthGuard} from './auth.guard';
+import { DeadEndComponent } from './dead-end/dead-end.component'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,6 +23,7 @@ import { LaptopComponent } from './laptop/laptop.component';
     RoutingComponent,
     LoginComponent,
     LaptopComponent,
+    DeadEndComponent,
   ],
   imports: 
   [
@@ -27,7 +31,7 @@ import { LaptopComponent } from './laptop/laptop.component';
     FormsModule,
     AppRoutingModule  
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

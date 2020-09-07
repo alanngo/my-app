@@ -6,11 +6,18 @@
         "const routes: Routes = 
         [
             // renders 'RootComponent' when 'root' is entered in URL
-            {{openCurly}} path:'root', component: RootComponent {{closeCurly}} 
+            {{openCurly}} path:<span class="text-danger">'root'</span>, component: <span class="text-primary">RootComponent</span> {{closeCurly}}
+            
+            //canActivate NEEDS TO be satisfied to render, cannot be accessed by URL manipulation or using routing
+            {{openCurly}} path:<span class="text-danger">'laptop'</span>, component: <span class="text-primary">LaptopComponent</span>, canActivate[<span class="text-primary">AuthGuard</span>] {{closeCurly}} 
             ...
 
-            {{openCurly}} path: '', redirectTo: '/root', pathMatch: 'full' {{closeCurly}}, //default route
-            {{openCurly}}path: '**', redirectTo: '/root', pathMatch: 'full' {{closeCurly}} //catch all route 
+            //default route 
+            {{openCurly}} path: <span class="text-danger">''</span>, redirectTo: <span class="text-danger">'/root'</span>, pathMatch: '<span class="text-danger">'full'</span> {{closeCurly}}, 
+            
+            // catch-all route if the routes are not listed 
+            {{openCurly}} path:<span class="text-danger">'deadEnd'</span>, component: <span class="text-primary">DeadEndComponent</span> {{closeCurly}}
+            {{openCurly}} path: <span class="text-danger">'**'</span>, redirectTo: <span class="text-danger">'/deadEnd'</span>, pathMatch: <span class="text-danger">'full'</span> {{closeCurly}} 
         ];"
     </code>
   </pre>
@@ -20,4 +27,22 @@
     <code>
         {{openAngle}}router-outlet{{closeAngle}} {{openAngle}}/router-outlet{{closeAngle}}
     </code>
-  </pre>
+</pre>
+<h2>Auth Guards</h2>
+<h6>"auth.guard.ts"</h6>
+<pre>
+    <code>
+        //needs to be satisfied to log in
+        canActivate
+        (
+            next: ActivatedRouteSnapshot,
+            state: RouterStateSnapshot
+        ):  Observable {{openAngle}}boolean |UrlTree{{closeAngle}}|
+            Promise {{openAngle}}boolean |UrlTree{{closeAngle}}|
+            boolean|
+            UrlTree
+        {{openCurly}}
+            ...
+        {{closeCurly}}
+    </code>
+</pre>

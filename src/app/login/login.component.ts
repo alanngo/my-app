@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from './User';
 import { Router } from '@angular/router';
+import { AuthGuard } from '../auth.guard';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -8,14 +9,15 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit 
 {
-  constructor(private router:Router ) {}
+  constructor(private router:Router, private auth:AuthGuard ) {}
   
   ngOnInit(): void {}
   
   users:Array<User> = 
   [
     {'username':"admin", 'password':"6627 56837 74355"},
-    {'username':"6627", 'password':"shell"}
+    {'username':"6627", 'password':"shell"},
+    {'username':"root", 'password':"toor"}
   ];
   user:User = new User();
   signup()
@@ -57,7 +59,8 @@ export class LoginComponent implements OnInit
     
     if (success)
     {
-      this.router.navigate(['root']);
+      this.auth.loggedInUser=this.user.username;
+      this.router.navigate(['laptop']);
       console.log("successfully logged in");
     }
     else
