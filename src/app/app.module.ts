@@ -12,7 +12,8 @@ import { LoginComponent } from './login/login.component';
 import { LaptopComponent } from './laptop/laptop.component';
 
 import {AuthGuard} from './auth.guard';
-import { DeadEndComponent } from './dead-end/dead-end.component'
+import { DeadEndComponent } from './dead-end/dead-end.component';
+import { BindingComponent } from './binding/binding.component'
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { DeadEndComponent } from './dead-end/dead-end.component'
     LoginComponent,
     LaptopComponent,
     DeadEndComponent,
+    BindingComponent,
   ],
   imports: 
   [

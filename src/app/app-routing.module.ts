@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { LaptopComponent } from './laptop/laptop.component';
 import { AuthGuard } from './auth.guard';
 import { DeadEndComponent } from './dead-end/dead-end.component';
+import { BindingComponent } from './binding/binding.component';
 
 const routes: Routes = 
 [
@@ -17,6 +18,7 @@ const routes: Routes =
     {path:'routing', component: RoutingComponent},
     {path:'login', component: LoginComponent},
     {path:'deadEnd', component: DeadEndComponent},
+    {path: 'binding', component:BindingComponent},
     {path:'laptop', component: LaptopComponent, canActivate: [AuthGuard]},
 
     { path: '', redirectTo: '/root', pathMatch: 'full' }, //default route

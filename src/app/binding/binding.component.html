@@ -1,0 +1,64 @@
+<h1>Binding</h1>
+<div class="row">
+    <div class="col-6">
+        <h6>"any.component.ts"</h6>
+        <pre>
+            <code>
+                export class AnyComponent implements OnInit 
+                {{openCurly}}
+                    // interpolation binding/data binding
+                    variable="shell";
+
+                    // event binding
+                    func()
+                    {{openCurly}}
+                        console.log("6627 56837 74355")
+                    {{closeCurly}}
+                {{closeCurly}}
+            </code>
+        </pre>
+    </div>
+    <div class="col-6">
+        <h6>"any.component.html"</h6>
+        <pre>
+            <code>
+                {{openAngle}}!--interpolation binding--{{closeAngle}}
+
+                {{openAngle}}h6{{closeAngle}}
+                referencing {{openCurly}}{{openCurly}}variable{{closeCurly}}{{closeCurly}}
+                {{openAngle}}/h6{{closeAngle}}
+
+                {{openAngle}}!--event binding--{{closeAngle}}
+                {{openAngle}}!--will trigger func() in ts file--{{closeAngle}}
+                {{openAngle}}button (click)="func()"{{closeAngle}}
+            </code>
+        </pre>
+    </div>
+</div>
+<div class="row">
+    <div class="col-6">
+        <h6>"any.component.ts"</h6>
+        <pre>
+            <code>
+                // 1 and 2 way binding
+                export class AnyComponent implements OnInit 
+                {{openCurly}}
+                    student = new Student(); // assume it has member 'name'
+                {{closeCurly}}
+            </code>
+        </pre>
+    </div>
+    <div class="col-6">
+        <h6>"any.component.html"</h6>
+        <pre>
+            <code>
+                {{openAngle}}!--1 way binding/property binding--{{closeAngle}}
+                {{openAngle}}h2 [innerText]="student.name"{{closeAngle}}{{openAngle}}/h2{{closeAngle}}
+
+                {{openAngle}}!--2 way binding/property binding--{{closeAngle}}
+                {{openAngle}}!--WE WANT THIS TYPE OF BINDING--{{closeAngle}}
+                {{openAngle}}input [(ngModel)]="student.name{{closeAngle}}
+            </code>
+        </pre>
+    </div>
+</div>
