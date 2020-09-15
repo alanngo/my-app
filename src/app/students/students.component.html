@@ -1,0 +1,16 @@
+<table class="table">
+    <thead>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Hours</th>
+        <th>Classification</th>
+    </thead>
+    <tbody>
+        <tr *ngFor = "let stu of students">
+            <td>{{stu.name | studentsTitle: stu.gender}}</td>
+            <td>{{stu.gender | lowercase}}</td>
+            <td>{{stu.hours}}</td>
+            <td>{{classification| hours:stu.hours}}</td>
+        </tr>
+    </tbody>
+</table>

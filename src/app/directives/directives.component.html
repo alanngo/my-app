@@ -1,0 +1,25 @@
+<h1>Angular Directives</h1>
+<h4>These are known as structural directives</h4>
+<ul>
+    <li>*ngFor: an iterator for rendering elements</li>
+    <li>*ngIf: shows and hides a DOM element based on a condition</li>
+</ul>
+<pre>
+    <code>
+        {{openAngle}}div *ngFor="let item of items"{{closeAngle}}{{openCurly}}{{openCurly}}item.name{{closeCurly}}{{closeCurly}}{{openAngle}}/div{{closeAngle}}
+
+        {{openAngle}}div *ngIf="currentCustomer"{{closeAngle}}{{openCurly}}{{openCurly}}currentCustomer.name{{closeCurly}}{{closeCurly}}{{openAngle}}/div{{closeAngle}}
+    </code>
+</pre>
+
+
+<div>
+    <p>This is using an ngIf and ngFor</p>
+    <button (click)="visible=!visible">Click me</button>
+    
+    <h6 *ngIf="!visible">6627 favorite languages/frameworks</h6>
+    <ul *ngIf="!visible">
+        <li *ngFor="let item of arr">{{item}}</li>
+    </ul>
+</div>
+
