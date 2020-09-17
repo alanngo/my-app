@@ -1,1 +1,72 @@
-<p>laptop works!</p>
+<div class="row">
+    <div class="col-3 ">
+        <div class="card">
+            <div class="card-header bg-dark text-light text">
+                <h1>Micro Center App</h1>
+            </div>
+            <div class="card-body border-dark">
+                <form action="" [formGroup]="laptopForm" (ngOnSubmit)="addLaptop()">
+                    <div class="form-group">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" formControlName="name" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">CPU</label>
+                        <input type="text" class="form-control" formControlName="cpu" >
+                    </div>
+                    <div class="form-group">
+                        <label for="">RAM</label>
+                        <input type="number" class="form-control" formControlName="ram">
+                    </div>
+                    <div [formGroup]="laptopForm.get('storage')">
+                        <div class="form-group">
+                            <label for="">NVME</label>
+                            <input type="number" class="form-control" formControlName="nvme">
+                        </div>
+                        <div class="form-group">
+                            <label for="">SSD</label>
+                            <input type="number" class="form-control" formControlName="ssd">
+                        </div>
+                        <div class="form-group">
+                            <label for="">HDD</label>
+                            <input type="number" class="form-control" formControlName="hdd">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="">GPU</label>
+                        <input type="text" class="form-control" formControlName="gpu">
+                    </div>
+                    <button class="btn-success btn" [disabled]="laptopForm.invalid" (click)="addLaptop()">Add Laptop</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col">
+        <table class="table">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>CPU</th>
+                <th>RAM</th>
+                <th>NVME</th>
+                <th>SSD</th>
+                <th>HDD</th>
+                <th>GPU</th>
+                <th>Delete</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let l of laptops">
+                    <td>{{l.id}}</td>
+                    <td>{{l.name}}</td>
+                    <td>{{l.cpu}}</td>
+                    <td>{{l.ram | ram: l.ram}}</td>
+                    <td>{{l.nvme | storage: l.nvme}}</td>
+                    <td>{{l.ssd | storage: l.ssd}}</td>
+                    <td>{{l.hdd | storage: l.hdd}}</td>
+                    <td>{{l.gpu}}</td>
+                    <td><button class="btn-danger btn" (click)="deleteLaptop(l.id)">X</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

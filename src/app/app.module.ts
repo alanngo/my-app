@@ -21,6 +21,8 @@ import { StudentsComponent } from './students/students.component';
 import { StudentsPipe } from './students/students.pipe';
 import { HoursPipe } from './students/hours.pipe';
 import { PipesComponent } from './pipes/pipes.component';
+import { RamPipe } from './laptop/ram.pipe';
+import { StoragePipe } from './laptop/storage.pipe';
 
 @NgModule({
   declarations: [
@@ -37,7 +39,9 @@ import { PipesComponent } from './pipes/pipes.component';
     StudentsComponent,
     StudentsPipe,
     HoursPipe,
+    RamPipe,
     PipesComponent,
+    StoragePipe,
   ],
   imports: 
   [

@@ -18,7 +18,7 @@ export class PipesComponent implements OnInit {
     "date",
     "decimal",
     "i18nPlural",
-    "I18nSelectPipe",
+    "I18nSelect",
     "json",
     "keyvalue",
     "lowercase",

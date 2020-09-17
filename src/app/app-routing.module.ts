@@ -22,7 +22,7 @@ const routes: Routes =
     {path:'login', component: LoginComponent},
     {path:'deadEnd', component: DeadEndComponent},
     {path: 'binding', component:BindingComponent},
-    {path:'laptop', component: LaptopComponent, canActivate: [AuthGuard]}, 
+    {path:'laptop', component: LaptopComponent}, 
     {path: 'directives', component:DirectivesComponent},
     {path: 'students', component: StudentsComponent},
     {path: 'pipes', component: PipesComponent},
